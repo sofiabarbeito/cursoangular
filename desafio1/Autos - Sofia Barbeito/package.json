@@ -1,0 +1,19 @@
+{
+  "name": "autos---sofia-barbeito",
+  "version": "1.0.0",
+  "description": "simulacion de empresa de autos",
+  "main": "index.js",
+  "scripts": {
+    "test": "start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sofiabarbeito/cursoangular.git"
+  },
+  "author": "Sofia Barbeito",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sofiabarbeito/cursoangular/issues"
+  },
+  "homepage": "https://github.com/sofiabarbeito/cursoangular#readme"
+}
