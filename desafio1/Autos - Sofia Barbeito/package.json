@@ -4,7 +4,7 @@
   "description": "simulacion de empresa de autos",
   "main": "index.js",
   "scripts": {
-    "test": "start"
+    "start": "start"
   },
   "repository": {
     "type": "git",
