@@ -37,7 +37,7 @@ let propietario = { //creo objeto propietario de los autos
     nombre: "Marcos",
     apellido: "Sanchez",
     correo: "marcosanches@gmail.com",
-    listaAutos: [auto1,auto2,auto3]
+    listaAutos: [auto1,auto2,auto3] 
 }
 
 console.log("El señor ",propietario.nombre," ",propietario.apellido," tiene resgistrados los siguientes autos: ")
