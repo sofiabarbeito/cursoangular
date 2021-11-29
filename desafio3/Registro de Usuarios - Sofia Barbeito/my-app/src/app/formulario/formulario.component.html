@@ -18,6 +18,9 @@
                     <div *ngIf="password?.errors?.minlength">
                         La clave debe tener 8 caracteres o mas.
                     </div>
+                    <div *ngIf="password?.errors?.required">
+                        La clave es requerida.
+                    </div>
                 </div>
             </div>
             <div class="mb-3">
