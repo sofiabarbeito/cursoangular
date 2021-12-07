@@ -1,1 +1,78 @@
-<p>registro works!</p>
+<div class="container" >
+    <div [hidden]="submitted">
+        <form [formGroup]="usuarioForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+                <label for="mail" class="form-label">Mail: </label>
+                <input type="email" class="form-control" id="mail" formControlName="mail" required>
+                <div *ngIf="!mail?.valid && (mail?.dirty ||mail?.touched)" class="alert alert-danger">
+                    <div *ngIf="mail?.errors?.required">
+                        El mail es requerido.
+                    </div>
+                    <div *ngIf="mail?.errors?.email">
+                        El mail es invalido.
+                    </div> 
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Clave: </label>
+                <input type="text" class="form-control" id="password" formControlName="password" required>
+                <div *ngIf="!password?.valid && (password?.dirty ||password?.touched)" class="alert alert-danger">
+                    <div *ngIf="password?.errors?.minlength">
+                        La clave debe tener 8 caracteres o mas.
+                    </div>
+                    <div *ngIf="password?.errors?.required">
+                        La clave es requerida.
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="name" class="form-label">Nombre: </label>
+                <input type="text" class="form-control" id="name" formControlName="name">
+            </div>
+            <div class="mb-3">
+                <label for="lastname" class="form-label">Apellido: </label>
+                <input type="text" class="form-control" id="lastname" formControlName="lastname">
+            </div>
+            <div class="mb-3">
+                <label for="age" class="form-label">Edad: </label>
+                <input type="number" class="form-control" id="age" formControlName="age" >
+            </div>
+            
+
+
+            <button type="submit" class="btn btn-primary" [disabled]="!usuarioForm.valid">Registrarse</button>
+            <button type="button" class="btn btn-default" (click)="newUsuario(); usuarioForm.reset()">Nuevo Usuario</button>
+        
+        
+        </form>
+    </div>
+
+   
+  
+    <div [hidden]="!submitted">
+      <h3>Te registraste con los siguientes datos:</h3>
+      <div class="row">
+        <div class="col-xs-3" style="font-weight:bold;">Mail</div>
+        <div class="col-xs-9">{{ mail?.value }}</div>
+      </div>
+      <div class="row">
+        <div class="col-xs-3" style="font-weight:bold;">Contraseña</div>
+        <div class="col-xs-9">{{ password?.value }}</div>
+      </div>
+      <div class="row">
+        <div class="col-xs-3" style="font-weight:bold;">Nombre</div>
+        <div class="col-xs-9">{{ name?.value }}</div>
+      </div>
+      <div class="row">
+        <div class="col-xs-3" style="font-weight:bold;">Apellido</div>
+        <div class="col-xs-9">{{ lastname?.value }}</div>
+      </div>
+      <div class="row">
+        <div class="col-xs-3" style="font-weight:bold;">Edad</div>
+        <div class="col-xs-9">{{ age?.value }}</div>
+      </div>
+      <br>
+      <button class="btn btn-primary" (click)="submitted=false">Editar</button>
+    </div>
+
+</div>
